@@ -21,7 +21,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${APPLICATION}:/application
     environment:
-      #- CONSUL_AGENT=consul                          # consul agent hostname/IP
+      #- CONSUL_AGENT=application-lite                # consul agent hostname/IP
       #- CONSUL_PORT=8500                             # consul agent port
       #- CONSUL_KEYPREFIX=path/prefix/                # consul key prefix path
       - CONSUL_SERVICENAME=openssh                    # consul service name
@@ -50,5 +50,5 @@ networks:
 ### Volumes Setup #############################################
 
 volumes:
-  application:
+  application-lite:
     driver: "local"
