@@ -9,8 +9,10 @@ This docker image includes:
 * tmux (+ themes)
 
 ## Configuration:
-* Generate ssh key for your access
-  `ssh-keygen -t rsa`
+* Generate ssh key for your access:
+  ```
+  ssh-keygen -t rsa
+  ```
 * Add your id_rsa.pub to environment (.env) file
 * Add your id_rsa.pub to SSH_AUTHORIZED_KEYS in Dockerfile
 * Rebuild your docker container
