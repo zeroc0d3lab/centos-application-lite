@@ -13,7 +13,7 @@ ENV SSH_AUTHORIZED_KEYS='' \
 	SSH_USER='docker' \
 	SSH_USER_FORCE_SFTP=false \
 	SSH_USER_HOME='/home/%u'\
-	SSH_USER_ID='500:500' \
+	SSH_USER_ID='1001:1001' \
 	SSH_USER_PASSWORD='docker' \
 	SSH_ROOT_PASSWORD='docker' \
 	SSH_USER_PASSWORD_HASHED=false \
@@ -142,7 +142,11 @@ RUN /usr/bin/ssh-keygen -A
 
 ONBUILD RUN mkdir -p /home/docker/.ssh \
             && touch /home/docker/.ssh/authorized_keys \
-            && cat /root/.ssh/authorized_keys > /home/docker/.ssh/authorized_keys
+            && cat /root/.ssh/authorized_keys > /home/docker/.ssh/authorized_keys \
+            && /usr/bin/ssh-keygen -f /home/docker/.ssh/id_rsa.pub -e -m pem > /home/docker/.ssh/id_rsa.pem \
+            && chmod 700 /home/docker/.ssh \
+            && chmod 600 /home/docker/.ssh/authorized_keys \
+            && chmod 600 /home/docker/.ssh/id_rsa* 
 
 #-----------------------------------------------------------------------------
 # Create Workspace Application Folder
