@@ -5,21 +5,21 @@ MAINTAINER ZeroC0D3 Team <zeroc0d3.team@gmail.com>
 # Set Environment
 #-----------------------------------------------------------------------------
 ENV SSH_AUTHORIZED_KEYS='' \
-	SSH_AUTOSTART_SSHD=true \
-	SSH_AUTOSTART_SSHD_BOOTSTRAP=true \
-	SSH_CHROOT_DIRECTORY='%h' \
-	SSH_INHERIT_ENVIRONMENT=false \
-	SSH_SUDO='ALL=(ALL) ALL' \
-	SSH_USER='docker' \
-	SSH_USER_FORCE_SFTP=false \
-	SSH_USER_HOME='/home/%u'\
-	SSH_USER_ID='1001:1001' \
-	SSH_USER_PASSWORD='docker' \
-	SSH_ROOT_PASSWORD='docker' \
-	SSH_USER_PASSWORD_HASHED=false \
-	SSH_USER_SHELL='/bin/bash' \
-	PATH_WORKSPACE=/home/docker \
-  PATH_APPLICATION=/home/docker/workspace
+    SSH_AUTOSTART_SSHD=true \
+    SSH_AUTOSTART_SSHD_BOOTSTRAP=true \
+    SSH_CHROOT_DIRECTORY='%h' \
+    SSH_INHERIT_ENVIRONMENT=false \
+    SSH_SUDO='ALL=(ALL) ALL' \
+    SSH_USER='docker' \
+    SSH_USER_FORCE_SFTP=false \
+    SSH_USER_HOME='/home/%u'\
+    SSH_USER_ID='1001:1001' \
+    SSH_USER_PASSWORD='docker' \
+    SSH_ROOT_PASSWORD='docker' \
+    SSH_USER_PASSWORD_HASHED=false \
+    SSH_USER_SHELL='/bin/bash' \
+    PATH_WORKSPACE=/home/docker \
+    PATH_APPLICATION=/home/docker/workspace
 
 #-----------------------------------------------------------------------------
 # Find Fastest Repo & Update Repo
