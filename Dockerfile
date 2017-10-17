@@ -1,4 +1,4 @@
-FROM zeroc0d3lab/centos-base-workspace:latest
+FROM zeroc0d3lab/centos-base-workspace-lite:latest
 MAINTAINER ZeroC0D3 Team <zeroc0d3.team@gmail.com>
 
 #-----------------------------------------------------------------------------
@@ -164,7 +164,7 @@ EXPOSE 22
 #-----------------------------------------------------------------------------
 # Set Volume Docker Workspace
 #-----------------------------------------------------------------------------
-VOLUME ["/home/docker", "/home/docker/workspace", "/root"]
+VOLUME [${PATH_WORKSPACE}]
 
 #-----------------------------------------------------------------------------
 # Run Init Docker Container
