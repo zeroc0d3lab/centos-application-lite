@@ -1,4 +1,4 @@
-FROM zeroc0d3lab/centos-base-workspace-lite:latest
+FROM zeroc0d3lab/centos-base-workspace:latest
 MAINTAINER ZeroC0D3 Team <zeroc0d3.team@gmail.com>
 
 #-----------------------------------------------------------------------------
@@ -122,7 +122,7 @@ RUN echo 'root:docker' | chpasswd \
 # Generate Public Key
 #-----------------------------------------------------------------------------
 # Create new public key
-RUN /usr/bin/ssh-keygen -t rsa -b 4096 -C "zeroc0d3.team@gmail.com" -f /root/.ssh/id_rsa -q -N ""; sync
+RUN /usr/bin/ssh-keygen -t rsa -b 4096 -C "zeroc0d3.team@gmail.com" -f $HOME/.ssh/id_rsa -q -N ""; sync
 
 RUN mkdir -p $HOME/.ssh \
     && touch $HOME/.ssh/authorized_keys \
